@@ -10,7 +10,7 @@ const main = async () => {
   }
   execSync('git checkout -- ./', { stdio: 'inherit' });
   execSync('git pull', { stdio: 'inherit' });
-  execSync('npm run bootstrap:prod');
+  execSync('npm run bootstrap:prod', { stdio: 'inherit' });
   execSync('npm run restart:proxy:prod', { stdio: 'inherit' });
 };
 
