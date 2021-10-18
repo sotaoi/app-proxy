@@ -7,13 +7,13 @@ const main = async () => {
   //
 
   let certsContentCombined = '';
-  const certsCombined = [path.resolve('../certs/cert.pem'), path.resolve('../certs/bundle.pem')];
+  const certsCombined = [path.resolve('../pocket/certs/cert.pem'), path.resolve('../pocket/certs/bundle.pem')];
 
   fs.existsSync(path.resolve('./certs/full-ssl-certificate-bundle.pem')) &&
     fs.unlinkSync(path.resolve('./certs/full-ssl-certificate-bundle.pem'));
 
-  fs.readdirSync(path.resolve('../certs')).map((item) => {
-    const fullpath = path.resolve('../certs', item);
+  fs.readdirSync(path.resolve('../pocket/certs')).map((item) => {
+    const fullpath = path.resolve('../pocket/certs', item);
     if (fs.lstatSync(fullpath).isDirectory() || item.charAt(0) === '.') {
       return;
     }
