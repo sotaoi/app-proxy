@@ -19,12 +19,12 @@
     "deploy:aproxy": "node ./scripts/deploy/deploy-aproxy",
     "deploy:reload-aproxy": "node ./scripts/deploy/deploy-reload-aproxy",
     "clean:aproxy": "node ./scripts/clean/clean-aproxy",
-    "---": "---",
-    "ssl:greenlock": "node ./scripts/ssl-greenlock",
-    "ssl:greenlock:prod": "node ./scripts/ssl-greenlock",
     "app:up": "node ./scripts/app/app-up",
     "app:down": "node ./scripts/app/app-down",
-    "postinstall": "node ./scripts/hook/hook-postinstall"
+    "postinstall": "node ./scripts/hook/hook-postinstall",
+    "---": "---",
+    "ssl:greenlock": "node ./scripts/ssl-greenlock",
+    "ssl:greenlock:prod": "node ./scripts/ssl-greenlock"
   },
   "devDependencies": {
     "@app/proxy": "file:./",
