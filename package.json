@@ -1,0 +1,36 @@
+{
+  "name": "@app/proxy",
+  "private": true,
+  "version": "0.9.1",
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "bootstrap": "npm install --no-audit --no-fund",
+    "bootstrap:prod": "npm install --no-audit --no-fund",
+    "start:proxy": "node ./scripts/start/start-proxy",
+    "stop:proxy": "node ./scripts/stop/stop-proxy",
+    "restart:proxy": "node ./scripts/restart/restart-proxy",
+    "start:proxy:prod": "npm run start:proxy",
+    "start:proxy:prod:sim": "npm run start:proxy",
+    "restart:proxy:prod": "npm run restart:proxy",
+    "stop:proxy:prod": "npm run stop:proxy",
+    "---": "---",
+    "deploy:aproxy": "node ./scripts/deploy/deploy-aproxy",
+    "deploy:reload-aproxy": "node ./scripts/deploy/deploy-reload-aproxy",
+    "clean:aproxy": "node ./scripts/clean/clean-aproxy",
+    "ssl:greenlock": "node ./scripts/ssl-greenlock",
+    "ssl:greenlock:prod": "node ./scripts/ssl-greenlock",
+    "app:up": "node ./scripts/app/app-up",
+    "app:down": "node ./scripts/app/app-down",
+    "postinstall": "node ./scripts/hook/hook-postinstall"
+  },
+  "devDependencies": {
+    "@app/proxy": "file:./",
+    "@types/node": "^14"
+  },
+  "dependencies": {
+    "@app/proxy": "file:./"
+  }
+}
