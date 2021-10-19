@@ -18,6 +18,7 @@
     "stop:proxy:prod": "npm run stop:proxy",
     "deploy:aproxy": "node ./scripts/deploy/deploy-aproxy",
     "deploy:reload-aproxy": "node ./scripts/deploy/deploy-reload-aproxy",
+    "clean:bootstrap": "node ./scripts/clean/clean-bootstrap",
     "clean:aproxy": "node ./scripts/clean/clean-aproxy",
     "app:up": "node ./scripts/app/app-up",
     "app:down": "node ./scripts/app/app-down",
