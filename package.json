@@ -23,8 +23,8 @@
     "app:up": "node ./scripts/app/app-up",
     "app:down": "node ./scripts/app/app-down",
     "postinstall": "node ./scripts/hook/hook-postinstall",
-    "ssl:greenlock": "node ./scripts/ssl-greenlock",
-    "ssl:greenlock:prod": "node ./scripts/ssl-greenlock"
+    "ssl:greenlock": "node ./scripts/ssl/ssl-greenlock",
+    "ssl:greenlock:prod": "npm run ssl:greenlock"
   },
   "devDependencies": {
     "@app/proxy": "file:./",
