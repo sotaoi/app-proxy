@@ -20,6 +20,12 @@ const main = async () => {
     fs.copyFileSync(fullpath, path.resolve('./certs', item));
   });
 
+  fs.existsSync(path.resolve('../pocket/env.json')) &&
+    fs.copyFileSync(
+      path.resolve('../pocket/env.json'),
+      path.resolve(path.dirname(require.resolve('@app/omni/package.json')), 'env.json'),
+    );
+
   certsCombined.map((item) => {
     certsContentCombined += fs.existsSync(item) && fs.readFileSync(item).toString();
   });
