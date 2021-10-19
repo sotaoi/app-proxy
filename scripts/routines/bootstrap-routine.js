@@ -10,9 +10,14 @@ const { Store } = require('@sotaoi/api/store');
 const { sconnect } = require('@sotaoi/api/db');
 const { Model } = require('@sotaoi/api/db/model');
 
-const bootstrapRoutine = async () => {
+const bootstrapRoutine = async (flags = {}) => {
   new AppKernel().bootstrap(config);
   await Store.init(getAppInfo(), {}, {}, null);
+  if (flags.justConfig === true) {
+    return async () => {
+      //
+    };
+  }
   await sconnect();
   return async () => {
     await Model.sdriver().destroy();
