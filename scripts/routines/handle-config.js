@@ -16,7 +16,7 @@ const handleConfig = async (appInfo, appPocket) => {
     try {
       let nginxDownConf = fs.readFileSync(path.resolve('nginx.down.template.conf')).toString();
       for (const [key, value] of Object.entries(configJsonFlat)) {
-        nginxDownConf = nginxDownConf.replace(`%{${key}}%`, value);
+        nginxDownConf = nginxDownConf.replace(new RegExp(`%{${key}}%`, 'g'), value);
       }
       fs.writeFileSync(path.resolve('./nginx.conf'), nginxDownConf);
       execSync('npm run restart:proxy', { stdio: 'inherit' });
