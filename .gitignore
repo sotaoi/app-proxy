@@ -8,5 +8,6 @@
 
 /env.json
 /.env
+/config.json
 
 /.greenlockrc

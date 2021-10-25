@@ -2,6 +2,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const { bootstrapRoutine } = require('@app/proxy/scripts/routines/bootstrap-routine');
+const { handleConfigJson } = require('../routines/handle-config-json');
+const { getAppInfo } = require('@sotaoi/omni/get-app-info');
+const { Store } = require('@sotaoi/api/store');
 
 const main = async () => {
   //
@@ -31,6 +35,16 @@ const main = async () => {
   });
   certsContentCombined.length &&
     fs.writeFileSync(path.resolve('./certs/full-ssl-certificate-bundle.pem'), certsContentCombined);
+
+  const done = await bootstrapRoutine();
+  let appPocket = {};
+  try {
+    appPocket = await Store.ensureAppPocket();
+  } catch (err) {
+    console.warn(err);
+  }
+  await handleConfigJson(getAppInfo(), appPocket);
+  await done();
 };
 
 main();

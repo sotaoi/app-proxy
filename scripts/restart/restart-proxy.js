@@ -7,6 +7,11 @@ const main = async () => {
     execSync('nginx -s reload', { stdio: 'inherit' });
   } catch (err) {
     console.error(err);
+    try {
+      execSync('npm run start:proxy', { stdio: 'inherit' });
+    } catch (err) {
+      console.error(err);
+    }
   }
 };
 
