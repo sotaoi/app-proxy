@@ -20,7 +20,7 @@ const main = async () => {
 
   const getTimestamp = Helper.getTimestamp;
 
-  altnames = appInfo.domainAlias ? [appInfo.domain, appInfo.domainAlias] : [appInfo.domain];
+  altnames = appInfo.proxyDomainAlias ? [appInfo.proxyDomain, appInfo.proxyDomainAlias] : [appInfo.proxyDomain];
   altnames = altnames.filter((item, pos) => {
     return String(altnames.indexOf(item)) === String(pos);
   });
