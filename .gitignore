@@ -9,5 +9,6 @@
 /env.json
 /.env
 /config.json
+/nginx.conf
 
 /.greenlockrc
