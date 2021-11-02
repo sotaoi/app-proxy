@@ -20,6 +20,7 @@
     "deploy:reload-aproxy": "node ./scripts/deploy/deploy-reload-aproxy",
     "clean:bootstrap": "node ./scripts/clean/clean-bootstrap",
     "clean:aproxy": "node ./scripts/clean/clean-aproxy",
+    "app:config": "node ./scripts/app/app-config",
     "app:up": "node ./scripts/app/app-up",
     "app:down": "node ./scripts/app/app-down",
     "ssl:greenlock": "node ./scripts/ssl/ssl-greenlock",

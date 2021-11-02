@@ -3,9 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const { bootstrapRoutine } = require('@app/proxy/scripts/routines/bootstrap-routine');
-const { handleConfig } = require('../routines/handle-config');
+const { handleConfigRoutine } = require('../routines/handle-config-routine');
 const { getAppInfo } = require('@sotaoi/omni/get-app-info');
 const { Store } = require('@sotaoi/api/store');
+const { AppPocket } = require('@sotaoi/omni/state');
 
 const main = async () => {
   //
@@ -43,7 +44,6 @@ const main = async () => {
   } catch (err) {
     console.warn(err);
   }
-  await handleConfig(getAppInfo(), appPocket);
   await done();
 };
 
